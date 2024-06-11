@@ -68,6 +68,11 @@ void NFRender() {
 	name.Cache = name.Data;
 	Location.Cache = Location.Data;
 	Details.Cache = Details.Data;
+
+	//A!MC fix this must be added functionality for copy, paste
+	//open folder too
+	//and no unrecognized characters
+	//also check for names so it apply with windows
 	if (name.Opened) {
 		PName.a = 1.f;
 
@@ -125,17 +130,17 @@ void NFRender() {
 
 		for (auto& Char : Characters) {
 			if (Char == VK_RETURN) {
-				Location.Opened = false;
+				Details.Opened = false;
 				break;
 			}
 			else if (Char == VK_ESCAPE) {
-				Location.Opened = false;
+				Details.Opened = false;
 				break;
 			}
 			else if (Char == VK_BACK)
-				Location.Data = Location.Data.substr(0, Location.Data.size() - 1);
+				Details.Data = Details.Data.substr(0, Details.Data.size() - 1);
 			else
-				Location.Data += Char;
+				Details.Data += Char;
 
 		}
 	}
@@ -166,7 +171,7 @@ void NFStart() {
 	name.Opened = false;
 	Location.Opened = false;
 	Details.Opened = false;
-	//this must be changed late A!MC
+	//fix this must be changed late A!MC
 	name.Data = "Project1";
 	Location.Data = "C:\\";
 	Details.Data = "New Project";
