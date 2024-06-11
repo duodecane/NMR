@@ -11,9 +11,9 @@ void RenderInformation(float a) {
 	R::DrawString(S.x + 8, S.y + 25, Col(255, 255, 255, 255 * a), Fonts::TXB, 0, "Version:");
 	R::DrawString(S.x + 368 - R::TextSize(Fonts::TX, "1.0a").x, S.y + 25, Col(170, 170, 255, 255 * a), Fonts::TX, 0, "1.0a");
 	R::DrawString(S.x + 8, S.y + 45, Col(255, 255, 255, 255 * a), Fonts::TXB, 0, "Build Date:");
-	R::DrawString(S.x + 350 - R::TextSize(Fonts::TX, __DATE__).x, S.y + 45, Col(170, 170, 255, 255 * a), Fonts::TX, 0, __DATE__);
+	R::DrawString(S.x + 368 - R::TextSize(Fonts::TX, __DATE__).x, S.y + 45, Col(170, 170, 255, 255 * a), Fonts::TX, 0, __DATE__);
 	R::DrawString(S.x + 8, S.y + 65, Col(255, 255, 255, 255 * a), Fonts::TXB, 0, "Built by:");
-	R::DrawString(S.x + 358 - R::TextSize(Fonts::TX, "Alkazar").x, S.y + 65, Col(170, 170, 255, 255 * a), Fonts::TX, 0, "Alkazar");
+	R::DrawString(S.x + 368 - R::TextSize(Fonts::TX, "Alkazar").x, S.y + 65, Col(170, 170, 255, 255 * a), Fonts::TX, 0, "Alkazar");
 }
 
 Hoverable Info(Vec2(10, 10), Vec2(220, 65), RenderInformation);
