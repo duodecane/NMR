@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="Col.cpp" />
+    <ClCompile Include="Imgui\imgui.cpp" />
+    <ClCompile Include="Imgui\imgui_draw.cpp" />
+    <ClCompile Include="Imgui\imgui_freetype.cpp" />
+    <ClCompile Include="Imgui\imgui_impl_dx9.cpp" />
+    <ClCompile Include="Imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="Imgui\imgui_tables.cpp" />
+    <ClCompile Include="Imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Math.cpp" />
+    <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="Rendering.cpp" />
+    <ClCompile Include="Vectors.cpp" />
+    <ClCompile Include="StartMenu.cpp">
+      <Filter>Scenes\Start Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenes.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="NewFile.cpp">
+      <Filter>Scenes\New File</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Blur.h" />
+    <ClInclude Include="App.h" />
+    <ClInclude Include="ByteData.h" />
+    <ClInclude Include="Col.h" />
+    <ClInclude Include="Imgui\imconfig.h" />
+    <ClInclude Include="Imgui\imconfig_legacy.h" />
+    <ClInclude Include="Imgui\imgui.h" />
+    <ClInclude Include="Imgui\imgui_freetype.h" />
+    <ClInclude Include="Imgui\imgui_impl_dx9.h" />
+    <ClInclude Include="Imgui\imgui_impl_win32.h" />
+    <ClInclude Include="Imgui\imgui_internal.h" />
+    <ClInclude Include="Imgui\imstb_rectpack.h" />
+    <ClInclude Include="Imgui\imstb_textedit.h" />
+    <ClInclude Include="Imgui\imstb_truetype.h" />
+    <ClInclude Include="Includes.h" />
+    <ClInclude Include="Math.h" />
+    <ClInclude Include="Matrix.h" />
+    <ClInclude Include="Rendering.h" />
+    <ClInclude Include="Vectors.h" />
+    <ClInclude Include="Fourier.h">
+      <Filter>Fourier Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Complex.h">
+      <Filter>Fourier Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Interpolate.h">
+      <Filter>Fourier Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="StartMenu.h">
+      <Filter>Scenes\Start Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneContext.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="NewFile.h">
+      <Filter>Scenes\New File</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="freetype\include\freetype.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Fourier Transform">
+      <UniqueIdentifier>{1d43745b-30bb-4f81-81f6-84343c5da4da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{eeddb11f-dd72-48ab-b860-61f8dde46ca9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\Start Menu">
+      <UniqueIdentifier>{4cf778a1-d13e-489f-ae38-e2ab351c553c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\New File">
+      <UniqueIdentifier>{bb1df084-86df-4434-a24c-038d053d3811}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
