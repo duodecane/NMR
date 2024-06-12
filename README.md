@@ -1,4 +1,6 @@
 # NMR
 
-## Note: Add auto font and directx download
+Blur is buggy on some windows versions
+Fonts need to be autodownloaded
+
  Software for NMR
