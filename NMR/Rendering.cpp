@@ -528,10 +528,10 @@ void Render::Initialize() {
 
 	io.Fonts->Clear();
 	//GetGlyphRangesDefault not GetGlyphRangesCyrillic cuz notr required
-	Fonts::H = io.Fonts->AddFontFromFileTTF("C:/windows/fonts/cascadiacode.ttf", 38.f, &defcfg, io.Fonts->GetGlyphRangesDefault());
+	Fonts::H = io.Fonts->AddFontFromMemoryTTF(CascadiaCode, CascadiaCodeLen, 38.f, &defcfg, io.Fonts->GetGlyphRangesDefault());
 	Fonts::TXB = io.Fonts->AddFontFromFileTTF("C:/windows/fonts/NirmalaB.ttf", 20.f, &defcfg, io.Fonts->GetGlyphRangesDefault());
-	Fonts::TX = io.Fonts->AddFontFromFileTTF("C:/windows/fonts/cascadiacode.ttf", 19.f, &defcfg, io.Fonts->GetGlyphRangesDefault());
-	Fonts::SH = io.Fonts->AddFontFromFileTTF("C:/windows/fonts/cascadiacode.ttf", 26.f, &defcfg, io.Fonts->GetGlyphRangesDefault());
+	Fonts::TX = io.Fonts->AddFontFromMemoryTTF(CascadiaCode, CascadiaCodeLen, 19.f, &defcfg, io.Fonts->GetGlyphRangesDefault());
+	Fonts::SH = io.Fonts->AddFontFromMemoryTTF(CascadiaCode, CascadiaCodeLen, 26.f, &defcfg, io.Fonts->GetGlyphRangesDefault());
 	Fonts::ICL = io.Fonts->AddFontFromMemoryTTF(FontIcons, FontIconsLength, 40.f, &cfg, io.Fonts->GetGlyphRangesDefault());
 	Fonts::ICM = io.Fonts->AddFontFromMemoryTTF(FontIcons, FontIconsLength, 30.f, &cfg, io.Fonts->GetGlyphRangesDefault());
 	Fonts::ICS = io.Fonts->AddFontFromMemoryTTF(FontIcons, FontIconsLength, 20.f, &cfg, io.Fonts->GetGlyphRangesDefault());
