@@ -36,6 +36,7 @@ public:
 	bool KeyStates[256];
 	bool OldKeyStates[256];
 	bool Mouse1Click;
+	std::string DefaultSearchFolder;
 	bool Mouse1Press;
 	bool KeyPressed(int VKEY) {
 		if (VKEY < 0 || VKEY > 256)

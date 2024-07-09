@@ -171,6 +171,7 @@
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="NewFile.cpp" />
+    <ClCompile Include="OS.cpp" />
     <ClCompile Include="Rendering.cpp" />
     <ClCompile Include="Scenes.cpp" />
     <ClCompile Include="StartMenu.cpp" />
@@ -198,6 +199,7 @@
     <ClInclude Include="Math.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="NewFile.h" />
+    <ClInclude Include="OS.h" />
     <ClInclude Include="Rendering.h" />
     <ClInclude Include="SceneContext.h" />
     <ClInclude Include="Scenes.h" />

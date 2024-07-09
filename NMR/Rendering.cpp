@@ -297,7 +297,7 @@ void Render::DrawString(float x, float y, Col color, ImFont* font, unsigned int 
 	auto size = ImGui::CalcTextSize(message);
 
 
-
+ 
 
 
 	if (!(flags & Render::centered_x))

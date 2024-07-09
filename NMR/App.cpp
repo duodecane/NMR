@@ -1,5 +1,7 @@
 #include "App.h"
 #include "Scenes.h"
+
+
 LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 
     static int ScrollDelta = 0;
@@ -10,6 +12,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         for (; ScrollDelta < 0; ScrollDelta += WHEEL_DELTA)
             App->Scroll -= 1;
     }
+
+
 
     LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
     ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam);
@@ -85,6 +89,15 @@ void CApp::Init() {
   
     ScreenSize = Vec2(1200, 900);
  
+    DefaultSearchFolder = "";
+    {
+        TCHAR* path = new TCHAR[256];
+        if (SUCCEEDED(SHGetFolderPath(NULL, CSIDL_MYDOCUMENTS, NULL, 0, path)))
+        {
+            DefaultSearchFolder = std::string(path);// + ("\\.NMRProjects");
+        }
+    }
+
     SceneContext->ScreenSize = ScreenSize;
     WNDCLASSEX wcex;
     wcex.cbSize = sizeof(WNDCLASSEX);

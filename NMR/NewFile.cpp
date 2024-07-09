@@ -1,5 +1,5 @@
 #include "NewFile.h"
-
+#include "OS.h"
 void BackEvent(float a) {
 	if (MC)
 		SC->CurrentPage = 0;
@@ -20,8 +20,15 @@ float OpenTime = 0.f;
 void ContinueEvent(float a) {
 	//continue
 }
+
+// ...
+
+
+
+
 Hoverable Back(Vec2(1020, 830), Vec2(70, 40), BackEvent);
 Hoverable Continue(Vec2(1100,830), Vec2(70, 40), ContinueEvent);
+
 
 
 Hoverable PName(Vec2(60, 240), Vec2(700, 40), [](float a) {
@@ -36,7 +43,11 @@ Hoverable Det(Vec2(60, 240 + 200), Vec2(700, 40), [](float a) {
 	if (!Details.Opened)
 		HoverState[2] = true;
 	});
-
+Hoverable Open(Vec2(60 + 700 + 20, 240 + 100), Vec2(50, 40), [](float a) {
+	if (MC) {
+		OS::SaveFolderDialog(Location.Data,name.Data);
+	}
+	});
 
 void NFRender() {
 	HoverState[0] = false;
@@ -47,13 +58,14 @@ void NFRender() {
 	PName.Update();
 	Loc.Update();
 	Det.Update();
-	Render::FilledRoundedRect(Back.p[0].x, Back.p[0].y, Back.p[1].x, Back.p[1].y, Col(0, 0, 0, 70 + 100 * Back.a), 7.f);
-	Render::RoundedRect(Back.p[0].x, Back.p[0].y, Back.p[1].x, Back.p[1].y, Col(255, 255, 255, 40 + 20 * Continue.a), 1.f, 7.f);
-	Render::DrawString(Back.p[0].x + Back.p[1].x * 0.5f, Back.p[0].y + Back.p[1].y * 0.5f, Col(255, 255, 255, 200 + 55 * Back.a), F::SH, R::centered_xy, "Back");
-	Render::FilledRoundedRect(Continue.p[0].x, Continue.p[0].y,Continue.p[1].x, Continue.p[1].y, Col(0, 0, 0, 70 + 100 * Continue.a), 7.f);
-	Render::RoundedRect(Continue.p[0].x, Continue.p[0].y, Continue.p[1].x, Continue.p[1].y, Col(255, 255, 255, 40 + 20 * Continue.a), 1.f, 7.f);
-	Render::DrawString(Continue.p[0].x + Continue.p[1].x * 0.5f, Continue.p[0].y + Continue.p[1].y * 0.5f, Col(255,255,255,200+55* Continue.a), F::SH, R::centered_xy, "Next");
-	Render::DrawString(30, 30, Col(255, 255, 255, 255), Fonts::H, 0, "Create a new NMR Project");
+	Open.Update();
+	R::FilledRoundedRect(Back.p[0].x, Back.p[0].y, Back.p[1].x, Back.p[1].y, Col(0, 0, 0, 70 + 100 * Back.a), 7.f);
+	R::RoundedRect(Back.p[0].x, Back.p[0].y, Back.p[1].x, Back.p[1].y, Col(255, 255, 255, 40 + 20 * Continue.a), 1.f, 7.f);
+	R::DrawString(Back.p[0].x + Back.p[1].x * 0.5f, Back.p[0].y + Back.p[1].y * 0.5f, Col(255, 255, 255, 200 + 55 * Back.a), F::SH, R::centered_xy, "Back");
+	R::FilledRoundedRect(Continue.p[0].x, Continue.p[0].y,Continue.p[1].x, Continue.p[1].y, Col(0, 0, 0, 70 + 100 * Continue.a), 7.f);
+	R::RoundedRect(Continue.p[0].x, Continue.p[0].y, Continue.p[1].x, Continue.p[1].y, Col(255, 255, 255, 40 + 20 * Continue.a), 1.f, 7.f);
+	R::DrawString(Continue.p[0].x + Continue.p[1].x * 0.5f, Continue.p[0].y + Continue.p[1].y * 0.5f, Col(255,255,255,200+55* Continue.a), F::SH, R::centered_xy, "Next");
+	R::DrawString(30, 30, Col(255, 255, 255, 255), Fonts::H, 0, "Create a new NMR Project");
 
 
 	
@@ -147,22 +159,28 @@ void NFRender() {
 
 
 
-	Render::DrawString(60, 200, Col(255, 255, 255, 255), Fonts::SH, 0, "Project name");
-	Render::FilledRoundedRect(PName.p[0].x, PName.p[0].y, PName.p[1].x, PName.p[1].y, Col(0, 0, 0, 50 + 30 * PName.a), 7.f);
-	Render::RoundedRect(PName.p[0].x, PName.p[0].y, PName.p[1].x, PName.p[1].y, Col(255, 255, 255, 40 + 20 * PName.a), 1.f, 7.f);
-	Render::DrawString(60, 300, Col(255, 255, 255, 255), Fonts::SH, 0, "Location");
-	Render::FilledRoundedRect(Loc.p[0].x, Loc.p[0].y, Loc.p[1].x, Loc.p[1].y, Col(0, 0, 0, 50 + 30 * Loc.a), 7.f);
-	Render::RoundedRect(Loc.p[0].x, Loc.p[0].y, Loc.p[1].x, Loc.p[1].y, Col(255, 255, 255, 40 + 20 * Loc.a), 1.f, 7.f);
-	Render::DrawString(60, 400, Col(255, 255, 255, 255), Fonts::SH, 0, "Details");
-	Render::FilledRoundedRect(Det.p[0].x, Det.p[0].y, Det.p[1].x, Det.p[1].y, Col(0, 0, 0, 50 + 30 * Det.a), 7.f);
-	Render::RoundedRect(Det.p[0].x, Det.p[0].y, Det.p[1].x, Det.p[1].y, Col(255, 255, 255, 40 + 20 * Det.a), 1.f, 7.f);
+	R::DrawString(60, 200, Col(255, 255, 255, 255), Fonts::SH, 0, "Project name");
+	R::FilledRoundedRect(PName.p[0].x, PName.p[0].y, PName.p[1].x, PName.p[1].y, Col(0, 0, 0, 50 + 30 * PName.a), 7.f);
+	R::RoundedRect(PName.p[0].x, PName.p[0].y, PName.p[1].x, PName.p[1].y, Col(255, 255, 255, 40 + 20 * PName.a), 1.f, 7.f);
+	R::DrawString(60, 300, Col(255, 255, 255, 255), Fonts::SH, 0, "Location");
+	R::FilledRoundedRect(Loc.p[0].x, Loc.p[0].y, Loc.p[1].x, Loc.p[1].y, Col(0, 0, 0, 50 + 30 * Loc.a), 7.f);
+	R::RoundedRect(Loc.p[0].x, Loc.p[0].y, Loc.p[1].x, Loc.p[1].y, Col(255, 255, 255, 40 + 20 * Loc.a), 1.f, 7.f);
 
-	Render::DrawString(PName.p[0].x + 10, PName.p[0].y + PName.p[1].y* 0.5f, Col(255, 255, 255, 255), Fonts::TX, R::centered_y, name.Cache.c_str());
-	Render::DrawString(Loc.p[0].x + 10, Loc.p[0].y + Loc.p[1].y * 0.5f, Col(255, 255, 255, 255), Fonts::TX, R::centered_y, Location.Cache.c_str());
-	Render::DrawString(Det.p[0].x + 10, Det.p[0].y + Det.p[1].y * 0.5f, Col(255, 255, 255, 255), Fonts::TX, R::centered_y, Details.Cache.c_str());
+	R::FilledRoundedRect(Open.p[0].x, Open.p[0].y, Open.p[1].x, Open.p[1].y, Col(0, 0, 0, 70 + 100 * Open.a), 7.f);
+	R::RoundedRect(Open.p[0].x, Open.p[0].y, Open.p[1].x, Open.p[1].y, Col(255, 255, 255, 40 + 20 * Open.a), 1.f,7.f);
+	R::DrawString(Open.p[0].x + Open.p[1].x*0.5f, Open.p[0].y + Open.p[1].y * 0.5f, Col(255, 255, 255, 255), Fonts::ICS, R::centered_xy, "G");
+
+	R::DrawString(60, 400, Col(255, 255, 255, 255), Fonts::SH, 0, "Details");
+	R::FilledRoundedRect(Det.p[0].x, Det.p[0].y, Det.p[1].x, Det.p[1].y, Col(0, 0, 0, 50 + 30 * Det.a), 7.f);
+	R::RoundedRect(Det.p[0].x, Det.p[0].y, Det.p[1].x, Det.p[1].y, Col(255, 255, 255, 40 + 20 * Det.a), 1.f, 7.f);
+
+	R::DrawString(PName.p[0].x + 10, PName.p[0].y + PName.p[1].y* 0.5f, Col(255, 255, 255, 255), Fonts::TX, R::centered_y, name.Cache.c_str());
+	R::DrawString(Loc.p[0].x + 10, Loc.p[0].y + Loc.p[1].y * 0.5f, Col(255, 255, 255, 255), Fonts::TX, R::centered_y, Location.Cache.c_str());
+	R::DrawString(Det.p[0].x + 10, Det.p[0].y + Det.p[1].y * 0.5f, Col(255, 255, 255, 255), Fonts::TX, R::centered_y, Details.Cache.c_str());
 }
 
 void NFStart() {
+	Open.a = 0.f;
 	Continue.a = 0.f;
 	Back.a = 0.f;
 	PName.a = 0.f;
@@ -173,7 +191,7 @@ void NFStart() {
 	Details.Opened = false;
 	//fix this must be changed late A!MC
 	name.Data = "Project1";
-	Location.Data = "C:\\";
+	Location.Data = App->DefaultSearchFolder;
 	Details.Data = "New Project";
 	OpenTime = 0.f;
 }

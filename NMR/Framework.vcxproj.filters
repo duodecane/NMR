@@ -24,6 +24,9 @@
     <ClCompile Include="NewFile.cpp">
       <Filter>Scenes\New File</Filter>
     </ClCompile>
+    <ClCompile Include="OS.cpp">
+      <Filter>Interfaces</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Blur.h" />
@@ -66,6 +69,9 @@
     <ClInclude Include="NewFile.h">
       <Filter>Scenes\New File</Filter>
     </ClInclude>
+    <ClInclude Include="OS.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="freetype\include\freetype.lib" />
@@ -82,6 +88,9 @@
     </Filter>
     <Filter Include="Scenes\New File">
       <UniqueIdentifier>{bb1df084-86df-4434-a24c-038d053d3811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interfaces">
+      <UniqueIdentifier>{eb2b2ac4-d250-4a21-be7f-de67938ffb02}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
