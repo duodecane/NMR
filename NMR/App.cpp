@@ -28,10 +28,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
             App->Render->Reset();
         }
         return 0;
+        /*
     case WM_SYSCOMMAND:
         if ((wParam & 0xfff0) == SC_KEYMENU) // Disable ALT application menu
             return 0;
-        break;
+        break;*/
     case WM_DESTROY:
         PostQuitMessage(0);
         return 0;
