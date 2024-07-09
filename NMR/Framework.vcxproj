@@ -160,6 +160,7 @@
   <ItemGroup>
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Col.cpp" />
+    <ClCompile Include="Exception.cpp" />
     <ClCompile Include="Imgui\imgui.cpp" />
     <ClCompile Include="Imgui\imgui_draw.cpp" />
     <ClCompile Include="Imgui\imgui_freetype.cpp" />
@@ -180,9 +181,11 @@
   <ItemGroup>
     <ClInclude Include="Blur.h" />
     <ClInclude Include="App.h" />
+    <ClInclude Include="BuildConfig.h" />
     <ClInclude Include="ByteData.h" />
     <ClInclude Include="Col.h" />
     <ClInclude Include="Complex.h" />
+    <ClInclude Include="Exception.h" />
     <ClInclude Include="Fourier.h" />
     <ClInclude Include="Imgui\imconfig.h" />
     <ClInclude Include="Imgui\imconfig_legacy.h" />

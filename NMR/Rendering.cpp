@@ -566,7 +566,8 @@ void Render::Initialize() {
 	
 
 	//	io.Fonts->Build(); //ALL I DID IS CHANGE THIS ONE LINE SO WE BUILD WITH FREETYPE NOW
-	ImGuiFreeType::BuildFontAtlas(io.Fonts, 0x00);
+	if (!ImGuiFreeType::BuildFontAtlas(io.Fonts, 0x00))
+		throw IException("Error: Fonts are unavailable", 0);
 
 	//build table used for shapes with a curve
 	if (SinCosTable.empty()) {

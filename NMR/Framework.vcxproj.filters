@@ -27,6 +27,7 @@
     <ClCompile Include="OS.cpp">
       <Filter>Interfaces</Filter>
     </ClCompile>
+    <ClCompile Include="Exception.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Blur.h" />
@@ -72,6 +73,8 @@
     <ClInclude Include="OS.h">
       <Filter>Interfaces</Filter>
     </ClInclude>
+    <ClInclude Include="Exception.h" />
+    <ClInclude Include="BuildConfig.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="freetype\include\freetype.lib" />
